@@ -1,0 +1,950 @@
+test> use dskola
+switched to db dskola
+
+Query 1: Find all books authored by "Author 5" that have been borrowed but not returned
+json
+
+dskola> db.books.find({
+...   author: "Author 5",
+...   "borrowed_by.return_date": null
+... })
+[
+  {
+    _id: ObjectId('6670ced2950abd86cc5882dd'),
+    title: 'Book Title 4',
+    author: 'Author 5',
+    genre: 'Science Fiction',
+    published_year: 1954,
+    copies_available: 51,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882dc'),
+        borrowed_date: ISODate('2024-11-27T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882f1'),
+    title: 'Book Title 14',
+    author: 'Author 5',
+    genre: 'Fiction',
+    published_year: 1964,
+    copies_available: 31,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882f0'),
+        borrowed_date: ISODate('2024-12-30T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc588305'),
+    title: 'Book Title 24',
+    author: 'Author 5',
+    genre: 'Fiction',
+    published_year: 1974,
+    copies_available: 11,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc588304'),
+        borrowed_date: ISODate('2024-03-09T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc588319'),
+    title: 'Book Title 34',
+    author: 'Author 5',
+    genre: 'Science Fiction',
+    published_year: 1984,
+    copies_available: 91,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc588318'),
+        borrowed_date: ISODate('2024-11-11T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc58832d'),
+    title: 'Book Title 44',
+    author: 'Author 5',
+    genre: 'Science Fiction',
+    published_year: 1994,
+    copies_available: 11,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc58832c'),
+        borrowed_date: ISODate('2024-12-17T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd87b'),
+    title: 'Book Title 4',
+    author: 'Author 5',
+    genre: 'Science Fiction',
+    published_year: 1954,
+    copies_available: 31,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd87a'),
+        borrowed_date: ISODate('2024-09-13T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd88f'),
+    title: 'Book Title 14',
+    author: 'Author 5',
+    genre: 'Fiction',
+    published_year: 1964,
+    copies_available: 91,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd88e'),
+        borrowed_date: ISODate('2024-11-30T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd8a3'),
+    title: 'Book Title 24',
+    author: 'Author 5',
+    genre: 'Science Fiction',
+    published_year: 1974,
+    copies_available: 81,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd8a2'),
+        borrowed_date: ISODate('2024-02-29T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd8b7'),
+    title: 'Book Title 34',
+    author: 'Author 5',
+    genre: 'Fantasy',
+    published_year: 1984,
+    copies_available: 11,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd8b6'),
+        borrowed_date: ISODate('2024-02-01T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd8cb'),
+    title: 'Book Title 44',
+    author: 'Author 5',
+    genre: 'Fantasy',
+    published_year: 1994,
+    copies_available: 91,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd8ca'),
+        borrowed_date: ISODate('2024-09-14T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd8df'),
+    title: 'Book Title 54',
+    author: 'Author 5',
+    genre: 'Fantasy',
+    published_year: 2004,
+    copies_available: 81,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd8de'),
+        borrowed_date: ISODate('2024-02-11T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd8f3'),
+    title: 'Book Title 64',
+    author: 'Author 5',
+    genre: 'Fiction',
+    published_year: 2014,
+    copies_available: 21,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd8f2'),
+        borrowed_date: ISODate('2024-04-09T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd907'),
+    title: 'Book Title 74',
+    author: 'Author 5',
+    genre: 'Dystopian',
+    published_year: 1954,
+    copies_available: 51,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd906'),
+        borrowed_date: ISODate('2024-02-15T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd91b'),
+    title: 'Book Title 84',
+    author: 'Author 5',
+    genre: 'Science Fiction',
+    published_year: 1964,
+    copies_available: 61,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd91a'),
+        borrowed_date: ISODate('2024-12-17T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd92f'),
+    title: 'Book Title 94',
+    author: 'Author 5',
+    genre: 'Fantasy',
+    published_year: 1974,
+    copies_available: 91,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd92e'),
+        borrowed_date: ISODate('2024-06-15T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  }
+]
+
+Query 2: List all books published before 1980 with more than 5 copies available
+dskola> db.books.find({
+...   published_year: { $lt: 1980 },
+...   copies_available: { $gt: 5 }
+... })
+[
+  {
+    _id: ObjectId('6670ced2950abd86cc5882d5'),
+    title: 'Book Title 0',
+    author: 'Author 1',
+    genre: 'Fiction',
+    published_year: 1950,
+    copies_available: 41,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882d4'),
+        borrowed_date: ISODate('2024-01-30T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882d7'),
+    title: 'Book Title 1',
+    author: 'Author 2',
+    genre: 'Fantasy',
+    published_year: 1951,
+    copies_available: 71,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882d6'),
+        borrowed_date: ISODate('2024-04-29T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882d9'),
+    title: 'Book Title 2',
+    author: 'Author 3',
+    genre: 'Adventure',
+    published_year: 1952,
+    copies_available: 91,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882d8'),
+        borrowed_date: ISODate('2024-10-19T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882db'),
+    title: 'Book Title 3',
+    author: 'Author 4',
+    genre: 'Adventure',
+    published_year: 1953,
+    copies_available: 51,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882da'),
+        borrowed_date: ISODate('2024-08-10T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882dd'),
+    title: 'Book Title 4',
+    author: 'Author 5',
+    genre: 'Science Fiction',
+    published_year: 1954,
+    copies_available: 51,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882dc'),
+        borrowed_date: ISODate('2024-11-27T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882df'),
+    title: 'Book Title 5',
+    author: 'Author 6',
+    genre: 'Fantasy',
+    published_year: 1955,
+    copies_available: 41,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882de'),
+        borrowed_date: ISODate('2024-05-07T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882e1'),
+    title: 'Book Title 6',
+    author: 'Author 7',
+    genre: 'Dystopian',
+    published_year: 1956,
+    copies_available: 31,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882e0'),
+        borrowed_date: ISODate('2024-04-27T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882e3'),
+    title: 'Book Title 7',
+    author: 'Author 8',
+    genre: 'Adventure',
+    published_year: 1957,
+    copies_available: 91,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882e2'),
+        borrowed_date: ISODate('2024-03-16T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882e5'),
+    title: 'Book Title 8',
+    author: 'Author 9',
+    genre: 'Dystopian',
+    published_year: 1958,
+    copies_available: 21,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882e4'),
+        borrowed_date: ISODate('2024-12-24T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882e7'),
+    title: 'Book Title 9',
+    author: 'Author 10',
+    genre: 'Fiction',
+    published_year: 1959,
+    copies_available: 71,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882e6'),
+        borrowed_date: ISODate('2024-04-27T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882e9'),
+    title: 'Book Title 10',
+    author: 'Author 1',
+    genre: 'Dystopian',
+    published_year: 1960,
+    copies_available: 11,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882e8'),
+        borrowed_date: ISODate('2024-09-28T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882eb'),
+    title: 'Book Title 11',
+    author: 'Author 2',
+    genre: 'Science Fiction',
+    published_year: 1961,
+    copies_available: 41,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882ea'),
+        borrowed_date: ISODate('2024-01-01T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882ed'),
+    title: 'Book Title 12',
+    author: 'Author 3',
+    genre: 'Science Fiction',
+    published_year: 1962,
+    copies_available: 91,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882ec'),
+        borrowed_date: ISODate('2024-06-26T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882ef'),
+    title: 'Book Title 13',
+    author: 'Author 4',
+    genre: 'Fiction',
+    published_year: 1963,
+    copies_available: 71,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882ee'),
+        borrowed_date: ISODate('2024-08-18T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882f1'),
+    title: 'Book Title 14',
+    author: 'Author 5',
+    genre: 'Fiction',
+    published_year: 1964,
+    copies_available: 31,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882f0'),
+        borrowed_date: ISODate('2024-12-30T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882f3'),
+    title: 'Book Title 15',
+    author: 'Author 6',
+    genre: 'Dystopian',
+    published_year: 1965,
+    copies_available: 61,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882f2'),
+        borrowed_date: ISODate('2024-11-28T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882f5'),
+    title: 'Book Title 16',
+    author: 'Author 7',
+    genre: 'Adventure',
+    published_year: 1966,
+    copies_available: 41,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882f4'),
+        borrowed_date: ISODate('2024-04-01T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882f7'),
+    title: 'Book Title 17',
+    author: 'Author 8',
+    genre: 'Dystopian',
+    published_year: 1967,
+    copies_available: 81,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882f6'),
+        borrowed_date: ISODate('2024-07-12T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882f9'),
+    title: 'Book Title 18',
+    author: 'Author 9',
+    genre: 'Adventure',
+    published_year: 1968,
+    copies_available: 11,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882f8'),
+        borrowed_date: ISODate('2024-07-02T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882fb'),
+    title: 'Book Title 19',
+    author: 'Author 10',
+    genre: 'Adventure',
+    published_year: 1969,
+    copies_available: 11,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882fa'),
+        borrowed_date: ISODate('2024-07-11T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  }
+]
+Type "it" for more
+dskola> it
+[
+  {
+    _id: ObjectId('6670ced2950abd86cc5882fd'),
+    title: 'Book Title 20',
+    author: 'Author 1',
+    genre: 'Fiction',
+    published_year: 1970,
+    copies_available: 71,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882fc'),
+        borrowed_date: ISODate('2024-10-05T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc5882ff'),
+    title: 'Book Title 21',
+    author: 'Author 2',
+    genre: 'Science Fiction',
+    published_year: 1971,
+    copies_available: 51,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc5882fe'),
+        borrowed_date: ISODate('2024-09-19T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc588301'),
+    title: 'Book Title 22',
+    author: 'Author 3',
+    genre: 'Adventure',
+    published_year: 1972,
+    copies_available: 81,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc588300'),
+        borrowed_date: ISODate('2024-05-01T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc588303'),
+    title: 'Book Title 23',
+    author: 'Author 4',
+    genre: 'Fantasy',
+    published_year: 1973,
+    copies_available: 31,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc588302'),
+        borrowed_date: ISODate('2024-09-08T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc588305'),
+    title: 'Book Title 24',
+    author: 'Author 5',
+    genre: 'Fiction',
+    published_year: 1974,
+    copies_available: 11,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc588304'),
+        borrowed_date: ISODate('2024-03-09T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc588307'),
+    title: 'Book Title 25',
+    author: 'Author 6',
+    genre: 'Dystopian',
+    published_year: 1975,
+    copies_available: 21,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc588306'),
+        borrowed_date: ISODate('2024-07-08T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc588309'),
+    title: 'Book Title 26',
+    author: 'Author 7',
+    genre: 'Adventure',
+    published_year: 1976,
+    copies_available: 71,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc588308'),
+        borrowed_date: ISODate('2024-02-11T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc58830b'),
+    title: 'Book Title 27',
+    author: 'Author 8',
+    genre: 'Science Fiction',
+    published_year: 1977,
+    copies_available: 71,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc58830a'),
+        borrowed_date: ISODate('2024-07-03T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc58830d'),
+    title: 'Book Title 28',
+    author: 'Author 9',
+    genre: 'Adventure',
+    published_year: 1978,
+    copies_available: 61,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc58830c'),
+        borrowed_date: ISODate('2024-03-10T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670ced2950abd86cc58830f'),
+    title: 'Book Title 29',
+    author: 'Author 10',
+    genre: 'Fiction',
+    published_year: 1979,
+    copies_available: 61,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670ced2950abd86cc58830e'),
+        borrowed_date: ISODate('2024-12-06T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd873'),
+    title: 'Book Title 0',
+    author: 'Author 1',
+    genre: 'Fiction',
+    published_year: 1950,
+    copies_available: 51,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd872'),
+        borrowed_date: ISODate('2024-06-25T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd875'),
+    title: 'Book Title 1',
+    author: 'Author 2',
+    genre: 'Adventure',
+    published_year: 1951,
+    copies_available: 81,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd874'),
+        borrowed_date: ISODate('2024-09-12T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd877'),
+    title: 'Book Title 2',
+    author: 'Author 3',
+    genre: 'Science Fiction',
+    published_year: 1952,
+    copies_available: 61,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd876'),
+        borrowed_date: ISODate('2024-10-13T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd879'),
+    title: 'Book Title 3',
+    author: 'Author 4',
+    genre: 'Dystopian',
+    published_year: 1953,
+    copies_available: 41,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd878'),
+        borrowed_date: ISODate('2024-07-21T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd87b'),
+    title: 'Book Title 4',
+    author: 'Author 5',
+    genre: 'Science Fiction',
+    published_year: 1954,
+    copies_available: 31,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd87a'),
+        borrowed_date: ISODate('2024-09-13T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd87d'),
+    title: 'Book Title 5',
+    author: 'Author 6',
+    genre: 'Adventure',
+    published_year: 1955,
+    copies_available: 11,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd87c'),
+        borrowed_date: ISODate('2024-03-04T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd87f'),
+    title: 'Book Title 6',
+    author: 'Author 7',
+    genre: 'Science Fiction',
+    published_year: 1956,
+    copies_available: 61,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd87e'),
+        borrowed_date: ISODate('2024-02-12T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd881'),
+    title: 'Book Title 7',
+    author: 'Author 8',
+    genre: 'Fiction',
+    published_year: 1957,
+    copies_available: 81,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd880'),
+        borrowed_date: ISODate('2024-03-19T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd883'),
+    title: 'Book Title 8',
+    author: 'Author 9',
+    genre: 'Fantasy',
+    published_year: 1958,
+    copies_available: 11,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd882'),
+        borrowed_date: ISODate('2024-09-10T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd885'),
+    title: 'Book Title 9',
+    author: 'Author 10',
+    genre: 'Adventure',
+    published_year: 1959,
+    copies_available: 61,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd884'),
+        borrowed_date: ISODate('2024-09-24T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  }
+]
+Type "it" for more
+
+Query 3: Find the top 5 most recently published books in the "Fantasy" genre
+
+dskola> db.books.find({ genre: "Fantasy" }).sort({ published_year: -1 }).limit(5)
+[
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd8fd'),
+    title: 'Book Title 69',
+    author: 'Author 10',
+    genre: 'Fantasy',
+    published_year: 2019,
+    copies_available: 81,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd8fc'),
+        borrowed_date: ISODate('2024-09-25T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd8fb'),
+    title: 'Book Title 68',
+    author: 'Author 9',
+    genre: 'Fantasy',
+    published_year: 2018,
+    copies_available: 31,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd8fa'),
+        borrowed_date: ISODate('2024-05-02T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd8ed'),
+    title: 'Book Title 61',
+    author: 'Author 2',
+    genre: 'Fantasy',
+    published_year: 2011,
+    copies_available: 31,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd8ec'),
+        borrowed_date: ISODate('2024-04-24T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd8df'),
+    title: 'Book Title 54',
+    author: 'Author 5',
+    genre: 'Fantasy',
+    published_year: 2004,
+    copies_available: 81,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd8de'),
+        borrowed_date: ISODate('2024-02-11T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6670cf0fdf1721c30d0fd8cb'),
+    title: 'Book Title 44',
+    author: 'Author 5',
+    genre: 'Fantasy',
+    published_year: 1994,
+    copies_available: 91,
+    borrowed_by: [
+      {
+        user_id: ObjectId('6670cf0fdf1721c30d0fd8ca'),
+        borrowed_date: ISODate('2024-09-14T00:00:00.000Z'),
+        return_date: null
+      }
+    ]
+  }
+]
+
+Query 4: Count the number of books available for each genre
+
+dskola> db.books.aggregate([
+...   { $group: { _id: "$genre", count: { $sum: 1 } } }
+... ])
+[
+  { _id: 'Fantasy', count: 22 },
+  { _id: 'Fiction', count: 33 },
+  { _id: 'Dystopian', count: 25 },
+  { _id: 'Adventure', count: 31 },
+  { _id: 'Science Fiction', count: 34 }
+]
+
+Query 5: Find all books that have never been borrowed
+
+dskola> db.books.find({ borrowed_by: { $size: 0 } })
+
+dskola>
