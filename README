@@ -1,5 +1,5 @@
 ## Deskripsi Proyek
-Proyek ini adalah bagian dari kursus NoSQL, yang mencakup pengaturan dan penggunaan MongoDB untuk manajemen data buku. Proyek ini mencakup beberapa skrip untuk mengatur database, memasukkan data, dan menjalankan query untuk mendapatkan informasi dari database.
+Proyek ini adalah bagian dari Homework NoSQL, yang mencakup pengaturan dan penggunaan MongoDB untuk manajemen data buku. Proyek ini mencakup beberapa skrip untuk mengatur database, memasukkan data, dan menjalankan query untuk mendapatkan informasi dari database.
 
 ## Prasyarat
 - **Python 3.x** 
