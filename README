@@ -1,1 +1,19 @@
+## Deskripsi Proyek
+Proyek ini adalah bagian dari kursus NoSQL, yang mencakup pengaturan dan penggunaan MongoDB untuk manajemen data buku. Proyek ini mencakup beberapa skrip untuk mengatur database, memasukkan data, dan menjalankan query untuk mendapatkan informasi dari database.
 
+## Prasyarat
+- **Python 3.x** 
+- **MongoDB**
+- **Docker** (opsional, jika ingin menjalankan MongoDB melalui Docker).
+
+## Menjalankan Skrip
+1. python insert_data.py
+2. Menjalankan Query MongoDB melalui mongosh
+File query_mongodb.js berisi beberapa query MongoDB untuk mendapatkan informasi dari database.
+
+Query yang diperlukan untuk homework kali ini adalah 
+1.	Find all books authored by "Author 5" that have been borrowed by any user but not yet returned.
+2.	List all books published before the year 1980 and have more than 5 copies available.
+3.	Find the top 5 most recently published books in the "Fantasy" genre.
+4.	Count the number of books available for each genre.
+5.	Find all books that have never been borrowed by any user.
